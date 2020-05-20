@@ -1,0 +1,7 @@
+pip
+geopandas
+pytest
+coverage
+pytest-cov
+pylint
+PyYaml
