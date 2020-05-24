@@ -8,7 +8,7 @@ import requests
 class Files:
 
     @staticmethod
-    def extract(blob: str, path: str):
+    def unarchive(blob: str, path: str):
         """
         :param blob: A Zip archive's URL
         :param path: The local target directory of the extracts
