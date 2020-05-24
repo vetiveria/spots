@@ -14,10 +14,10 @@ class Shapes:
         """
 
     @staticmethod
-    def files(blob, path):
+    def get(blob, path):
         files.Files.cleanup(path=path)
         files.Files.directories(path=path)
-        files.Files.extract(blob=blob, path=path)
+        files.Files.unarchive(blob=blob, path=path)
 
     @staticmethod
     def filepath(path: str, filestring: str):
@@ -65,11 +65,11 @@ class Shapes:
         :params filestring: The name of the file, including its extension, to be read-in
         """
 
-        # Download the data files
-        self.files(blob, path)
+        # Get the data files
+        self.get(blob, path)
 
         # The local filepath string to the file of interest
         filepath = self.filepath(path, filestring)
 
-        # Data
+        # Read, and return, the data files
         return self.read(filepath=filepath, ext=ext)
