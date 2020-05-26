@@ -29,7 +29,7 @@ and then
     conda install pylint
     conda install pyyaml
     conda install requests
-    conda intall jupyterlab
+    conda install jupyterlab
     conda install nodejs
 ```
 
