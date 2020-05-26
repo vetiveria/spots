@@ -1,9 +1,10 @@
-pip
 geopandas
+geopy
+pywin32
 pytest
 coverage
 pytest-cov
 pylint
 PyYaml
 requests
-geopy
+jupyterlab
