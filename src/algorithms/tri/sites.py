@@ -36,17 +36,17 @@ class Sites:
         # Initially, the data does not have a header row
         streams = streams.rename(columns=self.fields)
 
-        # For 'trif_id', this (a) removes leading & trailing spaces, and subsequently (b) replaces
+        # For 'TRIFID', this (a) removes leading & trailing spaces, and subsequently (b) replaces
         # empty cells with np.nan
-        streams['trif_id'] = streams['trif_id'].str.strip().replace(to_replace='', value=np.nan)
+        streams['TRIFID'] = streams['TRIFID'].str.strip().replace(to_replace='', value=np.nan)
 
         return streams
 
     def filtering(self, streams):
 
-        # This step will also eliminate cases wherein trif_id.isna()
-        condition = streams.trif_id.str.slice(start=0, stop=15).str.match(self.pattern)
-        literals = condition.apply(lambda x: x if x is True else False, meta=('trif_id', 'bool'))
+        # This step will also eliminate cases wherein TRIFID.isna()
+        condition = streams.TRIFID.str.slice(start=0, stop=15).str.match(self.pattern)
+        literals = condition.apply(lambda x: x if x is True else False, meta=('TRIFID', 'bool'))
         estimates = streams[literals]
 
         # Of interest
@@ -56,9 +56,9 @@ class Sites:
 
     @staticmethod
     def attributes(blob: pd.DataFrame, state: str):
-        blob['latitude'] = blob.latitude.astype(dtype='float', errors='raise')
-        blob['longitude'] = blob.longitude.astype(dtype='float', errors='raise')
-        blob['state_geoid'] = state
+        blob['LATITUDE'] = blob.LATITUDE.astype(dtype='float', errors='raise')
+        blob['LONGITUDE'] = blob.LONGITUDE.astype(dtype='float', errors='raise')
+        blob['STATEGEOID'] = state
 
         return blob
 
@@ -77,4 +77,4 @@ class Sites:
         funnel = self.filtering(streams=streams)
         summary = funnel.compute()
 
-        return self.attributes(blob=summary, state=state)
+        return self.attributes(blob=summary, state=state), funnel
