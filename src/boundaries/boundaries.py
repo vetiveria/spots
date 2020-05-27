@@ -65,7 +65,12 @@ class Boundaries:
         ext = 'shp'
         filestring = 'cb_{year}_{state}_tract_500k.shp'.format(state=state, year=year)
 
-        return self.request(blob=blob, path=path, ext=ext, filestring=filestring)
+        data = self.request(blob=blob, path=path, ext=ext, filestring=filestring)
+
+        # The county GEOID field
+        data['COUNTYGEOID'] = [''.join([x, y]) for x, y in zip(data.STATEFP, data.COUNTYFP)]
+
+        return data
 
     def counties(self, year):
         """
