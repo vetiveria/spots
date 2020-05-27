@@ -6,5 +6,5 @@ coverage
 pytest-cov
 pylint
 PyYaml
-requests
 jupyterlab
+dask
