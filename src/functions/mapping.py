@@ -10,9 +10,9 @@ class Mapping:
 
     def frame(self, blob: pd.DataFrame):
 
-        # Convert the data frame to a geographic data frame
+        # Convert the data frame to a geographic data frame: re-visit
         data = gpd.GeoDataFrame(data=blob,
-                                geometry=gpd.points_from_xy(blob.longitude, blob.latitude),
+                                geometry=gpd.points_from_xy(blob.LONGITUDE, blob.LATITUDE),
                                 crs=self.crs)
 
         return data
