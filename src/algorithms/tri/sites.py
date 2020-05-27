@@ -50,7 +50,7 @@ class Sites:
         estimates = streams[literals]
 
         # Of interest
-        estimates = estimates.drop(columns=['row', 'total'])
+        estimates = estimates.drop(columns=['ROW', 'TOTAL'])
 
         return estimates.drop_duplicates()
 
