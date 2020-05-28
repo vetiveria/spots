@@ -12,12 +12,51 @@ These notes are updates continuously ...
 <br>
 <br>
 
-#### A different approach
+#### Anaconda
 
-Environments
-* https://packaging.python.org/guides/installing-using-pip-and-virtual-environments/
+The suggestions of geopandas, https://geopandas.org/install.html, fail
 
-Ensure that pip's version is ≥ 20.0.2.  Also required: [Microsoft C++ Build Tools](https://visualstudio.microsoft.com/visual-cpp-build-tools/)
+```bash
+    conda create --prefix ...environment
+    conda activate environment
+
+    conda config --env --add channels conda-forge
+    conda config --env --set channel_priority strict
+    conda install python=3.7 geopandas
+```
+Instead
+
+```bash
+  conda create --prefix ...environment
+  conda activate environment
+
+  conda install -c anaconda python=3.7.7
+  conda install -c anaconda geopandas
+  conda install -c anaconda geopy
+  conda install -c anaconda nodejs
+  conda install -c anaconda jupyterlab    
+  conda install -c anaconda pywin32    
+  conda install -c anaconda pytest
+  conda install -c anaconda coverage
+  conda install -c anaconda pytest-cov
+  conda install -c anaconda pylint
+  conda install -c anaconda pyyaml    
+
+```
+
+Next time set-up
+
+```bash
+  conda config --env --add channels anaconda
+  conda config --env --set channel_priority strict
+```
+
+<br>
+<br>
+
+#### VENV
+
+An option, ``virtual env`` instead of ``conda``; details w.r.t. [virtual env](https://packaging.python.org/guides/installing-using-pip-and-virtual-environments/).  Ensure that the pip version is ≥ 20.0.2.  Also required: [Microsoft C++ Build Tools](https://visualstudio.microsoft.com/visual-cpp-build-tools/)
 
 ```bash
 python -m venv env
@@ -28,54 +67,12 @@ pip install numpy
 
 <br>
 
-Installing `geopandas` via pip
-* https://geopandas.org/install.html#installing-with-pip
-
-<br>
-
-Wheels
-* https://www.lfd.uci.edu/~gohlke/pythonlibs/#pyproj
-
-Use the command `pip install env\Scripts\{...}.whl` to install wheel files; the command assumes that the .whl files in question are hosted by env\Scripts\
-
-<br>
-
-**Before installing** the wheels of shapely, fiona, pyproj, and rtree, install
-
-* numpy
+Prior to installing [geopandas via pip](https://geopandas.org/install.html#installing-with-pip) ``numpy`` must be installed, and a set of [wheels](https://www.lfd.uci.edu/~gohlke/pythonlibs/#pyproj) are required; shapely, fiona, pyproj, and rtree.  Use the command `pip install env\Scripts\{...}.whl` to install wheel files; the command assumes that the .whl files in question are hosted by env\Scripts\.
 
 <br>
 <br>
 
-#### Installing Packages
 
-Ideas, courtesy of geopandas, as https://geopandas.org/install.html
-
-```markdown
-    conda create --prefix ...environment
-    conda activate environment
-
-    conda config --env --add channels conda-forge
-    conda config --env --set channel_priority strict
-    conda install python=3.7 geopandas
-```
-and then
-
-```markdown
-    conda install geopy
-    conda install pywin32
-    conda install pytest
-    conda install coverage
-    conda install pytest-cov
-    conda install pylint
-    conda install pyyaml
-    conda install requests
-    conda install jupyterlab
-    conda install nodejs
-```
-
-<br>
-<br>
 
 #### The Requirements
 
@@ -83,17 +80,7 @@ and then
     pip freeze -r docs/filter.txt > requirements.txt
 ````
 
-The file [filter.txt](./docs/filter.txt) summarises the directly installed packages, e.g.,
-
-* pip
-* geopandas
-* pytest
-* coverage
-* pytest-cov
-* pylint
-* PyYaml
-
-Hence, [filter.txt](./docs/filter.txt) is used to create a demarcated [requirements.txt](requirements.txt)
+The file [filter.txt](./docs/filter.txt) summarises the directly installed packages.  Hence, [filter.txt](./docs/filter.txt) is used to create a demarcated [requirements.txt](requirements.txt)
 
 <br>
 <br>
