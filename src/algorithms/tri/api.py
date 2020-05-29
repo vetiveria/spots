@@ -1,4 +1,15 @@
 class API:
+    """
+    A class that builds the URL string of the old TRI data source.  Beware of the URL arguments
+
+        state: The state federal information processing numeric code, i.e.,
+               ISO 3166-2:US, e.g., Louisiana -> 22.
+
+        county: GEOID, which is a concatenation of ISO 3166-2:US & county
+                code, e.g., 22095 for St. John the Baptist (095) in Louisiana (22).  Or All+counties
+
+        year
+    """
 
     def __init__(self):
         self.name = ''
