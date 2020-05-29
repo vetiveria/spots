@@ -10,7 +10,7 @@ class Geodetic:
         self.decimal = decimal
         self.decimal.getcontext().prec = 6
 
-    def proximate(self, degrees: int, minutes: int, seconds: int):
+    def calculate(self, degrees: int, minutes: int, seconds: int):
         dec = self.decimal.Decimal(degrees + (minutes * 60 + seconds) / 3600)
         dec = dec.quantize(self.decimal.Decimal(self.precision), rounding=self.rounding)
 
@@ -23,4 +23,4 @@ class Geodetic:
         minutes = int(arc[2:4])
         seconds = int(arc[4:])
 
-        return self.proximate(degrees=degrees, minutes=minutes, seconds=seconds)
+        return self.calculate(degrees=degrees, minutes=minutes, seconds=seconds)
