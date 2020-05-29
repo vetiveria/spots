@@ -12,6 +12,19 @@ These notes are updates continuously ...
 <br>
 <br>
 
+#### Bash
+
+Beware of bash files created within a Windows environment.  The conversion
+
+```bash
+  dos2unix.exe *.sh
+```
+
+might be required.
+
+<br>
+<br>
+
 #### Anaconda
 
 The suggestions of geopandas, https://geopandas.org/install.html, fail
