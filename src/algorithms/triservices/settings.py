@@ -4,7 +4,9 @@ import pandas as pd
 class Settings:
 
     def __init__(self):
-        self.name = ''
+
+        self.ofinterest = ['TRIFID', 'LATITUDE', 'LONGITUDE', 'COUNTYGEOID', 'FACILITY_NAME', 'STREET',
+                           'CITY',  'STUSPS', 'ZIP_CODE', 'FAC_CLOSED_IND', 'ASGN_FEDERAL_IND', 'BIA_CODE',  'query']
 
     @staticmethod
     def attributes() -> pd.DataFrame:
