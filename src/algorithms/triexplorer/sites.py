@@ -2,8 +2,8 @@ import dask
 import dask.dataframe
 import numpy as np
 
-import src.algorithms.tri.api as api
-import src.algorithms.tri.settings as settings
+import src.algorithms.triexplorer.api as api
+import src.algorithms.triexplorer.settings as settings
 
 
 class Sites:
