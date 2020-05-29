@@ -11,12 +11,8 @@ class Settings:
         self.starting = 1988
         self.ending = 2018
         self.years = range(self.starting, self.ending + 1)
-        self.latest = self.years[-1]
 
-        # The coordinate reference system
-        self.crs = 4269
-
-        # The trif_id code pattern
+        # The TRIFID code pattern
         self.pattern = '^([0-9]{3,5}[^AEIOU]{4,5}[A-Z0-9]{4,6})'
 
         # The fields of interest
