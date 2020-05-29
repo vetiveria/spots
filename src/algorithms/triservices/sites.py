@@ -57,7 +57,7 @@ class Sites:
     def getquery(self, blob: dd.DataFrame):
 
         blob['query'] = blob.STREET
-        for field in ['CITY', 'STATEFP', 'ZIP_CODE']:
+        for field in ['CITY', 'STUSPS', 'ZIP_CODE']:
             blob['query'] = blob['query'] + blob[field].astype(str)
 
         return blob
