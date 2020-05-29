@@ -1,7 +1,6 @@
 import dask
 import dask.dataframe
 import numpy as np
-import pandas as pd
 
 import src.algorithms.tri.api as api
 import src.algorithms.tri.settings as settings
@@ -55,9 +54,10 @@ class Sites:
         return estimates.drop_duplicates()
 
     @staticmethod
-    def attributes(blob: pd.DataFrame, state: str):
-        blob['LATITUDE'] = blob.LATITUDE.astype(dtype='float', errors='raise')
-        blob['LONGITUDE'] = blob.LONGITUDE.astype(dtype='float', errors='raise')
+    def attributes(blob, state: str):
+        for field in ['LATITUDE', 'LONGITUDE']:
+            blob[field] = blob[field].astype(dtype='float')
+
         blob['STATEGEOID'] = state
 
         return blob
@@ -70,11 +70,20 @@ class Sites:
 
     def requesting(self, state: str):
 
+        # The list of a state's data URL strings
         nodes = [dask.delayed(self.feed)(state, year) for year in list(self.years)]
         sources = dask.compute(nodes, scheduler='processes')[0]
 
+        # Reading-in
         streams = self.reading(sources=sources)
-        funnel = self.filtering(streams=streams)
-        summary = funnel.compute()
 
-        return self.attributes(blob=summary, state=state), funnel
+        # Filtering-out anomalies and duplicates
+        filterings = self.filtering(streams=streams.copy())
+
+        # Ascertain field attributes
+        computations = self.attributes(blob=filterings, state=state)
+
+        # Compute
+        data = computations.compute()
+
+        return data, computations
