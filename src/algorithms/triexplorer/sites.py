@@ -21,7 +21,7 @@ class Sites:
         self.kwargs = {'usecols': self.indices, 'header': None, 'skiprows': 5, 'encoding': 'UTF-8',
                        'skipinitialspace': True, 'error_bad_lines': True, 'warn_bad_lines': True}
 
-    def reading(self, sources):
+    def read(self, sources):
         """
         Note, in this case pandas is instructed to drop 'bad lines'
         :params source: The URL of the data
@@ -41,7 +41,7 @@ class Sites:
 
         return streams
 
-    def filtering(self, streams):
+    def filter(self, streams):
 
         # This step will also eliminate cases wherein TRIFID.isna()
         condition = streams.TRIFID.str.slice(start=0, stop=15).str.match(self.pattern)
@@ -54,7 +54,7 @@ class Sites:
         return estimates.drop_duplicates()
 
     @staticmethod
-    def attributes(blob, state: str):
+    def format(blob, state: str):
         for field in ['LATITUDE', 'LONGITUDE']:
             blob[field] = blob[field].astype(dtype='float')
 
@@ -68,20 +68,20 @@ class Sites:
         if settings.Settings.hasdata(dataurl=source):
             return source
 
-    def requesting(self, state: str):
+    def request(self, state: str):
 
         # The list of a state's data URL strings
         nodes = [dask.delayed(self.feed)(state, year) for year in list(self.years)]
         sources = dask.compute(nodes, scheduler='processes')[0]
 
         # Reading-in
-        streams = self.reading(sources=sources)
+        streams = self.read(sources=sources)
 
         # Filtering-out anomalies and duplicates
-        filterings = self.filtering(streams=streams.copy())
+        remains = self.filter(streams=streams.copy())
 
         # Ascertain field attributes
-        computations = self.attributes(blob=filterings, state=state)
+        computations = self.format(blob=remains, state=state)
 
         # Compute
         data = computations.compute()
