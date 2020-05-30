@@ -10,7 +10,7 @@ class Settings:
         self.latest = 2018
 
         # The fields of interest
-        self.ofinterest = ['TRIFID', 'LONGITUDE', 'LATITUDE', 'ESTIMATED',
+        self.ofinterest = ['TRIFID', 'LONGITUDE', 'LATITUDE', 'ESTIMATE',
                            'STATEFP', 'COUNTYFP', 'TRACTCE',
                            'STATEGEOID', 'COUNTYGEOID', 'TRACTGEOID', 'AFFGEOID',
                            'FACILITY_NAME', 'STREET', 'CITY', 'STUSPS', 'ZIP_CODE', 'FACILITY',
