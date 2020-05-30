@@ -32,6 +32,12 @@ class Intersections:
         return stream.LATITUDE.isna() | stream.LONGITUDE.isna()
 
     def request(self, blob: pd.DataFrame, state: str):
+        """
+
+        :param blob: The data set
+        :param state: The 2 digit string code of a state
+        :return:
+        """
 
         stream = blob.copy()
 
