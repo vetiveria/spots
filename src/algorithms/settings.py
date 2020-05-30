@@ -10,8 +10,8 @@ class Settings:
         self.latest = 2018
 
         # The fields of interest
-        self.ofinterest = ['TRIFID', 'LONGITUDE', 'LATITUDE',
+        self.ofinterest = ['TRIFID', 'LONGITUDE', 'LATITUDE', 'ESTIMATED',
                            'STATEFP', 'COUNTYFP', 'TRACTCE',
-                           'COUNTYGEOID', 'TRACTGEOID',
+                           'STATEGEOID', 'COUNTYGEOID', 'TRACTGEOID', 'AFFGEOID',
                            'FACILITY_NAME', 'STREET', 'CITY', 'STUSPS', 'ZIP_CODE', 'FACILITY',
-                           'FAC_CLOSED_IND', 'ASGN_FEDERAL_IND', 'BIA_CODE']
+                           'FAC_CLOSED_IND', 'ASGN_FEDERAL_IND', 'BIA_CODE', 'EPA_REGISTRY_ID']
