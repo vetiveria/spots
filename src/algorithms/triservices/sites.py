@@ -52,13 +52,13 @@ class Sites:
                 lambda x: geodetic.geodetic(x) if not math.isnan(x) else np.nan,
                 meta=(field, 'float64'))
 
-        return data
+        return data.drop(columns=['FAC_LATITUDE', 'FAC_LONGITUDE'])
 
     def getquery(self, blob: dd.DataFrame):
 
-        blob['query'] = blob.STREET
+        blob['query'] = blob.FACILITY_NAME + ' ' + blob.STREET
         for field in ['CITY', 'STUSPS', 'ZIP_CODE']:
-            blob['query'] = blob['query'] + blob[field].astype(str)
+            blob['query'] = blob['query'] + ', ' + blob[field].astype(str)
 
         return blob
 
@@ -76,9 +76,11 @@ class Sites:
         # Calculate decimal coordinates
         streams = self.getcoordinates(blob=streams)
 
-        # Compute
+        # Query
         computations = self.getquery(blob=streams)
 
+        # Compute
         data = computations.compute()
+        data = data.groupby(by='TRIFID').first().reset_index(drop=False)
 
         return data, computations
