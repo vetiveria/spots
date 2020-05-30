@@ -15,10 +15,6 @@ class Settings:
         # The TRIFID code pattern
         self.pattern = '^([0-9]{3,5}[^AEIOU]{4,5}[A-Z0-9]{4,6})'
 
-        # The fields of interest
-        self.ofinterest = ['TRIFID', 'LONGITUDE', 'LATITUDE', 'STATEFP', 'COUNTYFP', 'TRACTCE',
-                          'COUNTYGEOID', 'TRACTGEOID', 'FACILITY']
-
     @staticmethod
     def fields():
 
