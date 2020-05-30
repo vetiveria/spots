@@ -13,6 +13,7 @@ class GeoPyCoders:
     def via(self, data: pd.Series):
         """
         :param data: A series of addresses whose latitude & longitude coordinates will be searched-for
+
         :return:
             A pandas.core.series.Series of geopy.Location objects .. if the address is
             located, None otherwise
@@ -22,9 +23,14 @@ class GeoPyCoders:
 
     def geocoding(self, data: gpd.GeoDataFrame, field: str):
         """
-        :param data: A series of addresses whose latitude & longitude coordinates will be searched-for
-        :param field: The field of addresses whose latitude & longitude coordinates will
-                      be searched-for
+        :param data:
+            A data set that includes a field of addresses whose latitude & longitude
+            coordinates will be searched-for
+
+        :param field:
+            The field of addresses whose latitude & longitude coordinates will be
+            searched-for
+
         :return:
             A GeoDataFrame of consisting of field, a locale object, a geometry object, address, latitude,
             and longitude.  If an instance of field is not found a record will not be
