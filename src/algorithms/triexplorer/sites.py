@@ -1,9 +1,8 @@
 import dask
 import dask.dataframe as dd
-import numpy as np
 
-import src.algorithms.triexplorer.api as api
-import src.algorithms.triexplorer.settings as settings
+import src.algorithms.triexplorer.api
+import src.algorithms.triexplorer.settings
 
 
 class Sites:
@@ -12,17 +11,28 @@ class Sites:
         """
         The constructor
         """
-        setup = settings.Settings()
-        self.pattern = setup.pattern
-        self.years = setup.years
-        self.fields, self.kwargs = setup.source()
+        self.settings = src.algorithms.triexplorer.settings.Settings()
+        self.pattern = self.settings.pattern
+        self.years = self.settings.years
+        self.fields, self.kwargs = self.settings.getattributes()
 
-        self.url = api.API().url()
+        api = src.algorithms.triexplorer.api.API()
+        self.url = api.url()
 
     def feed(self, state: str, year: int):
+        """
+        :param state:
+            The 2 digit state code, in string form.
+
+        :param year:
+            Data year
+
+        :return:
+            A state's data URL, for a given year, if data exists for that year
+        """
 
         source = self.url.format(state=state, year=year)
-        if settings.Settings.hasdata(dataurl=source):
+        if self.settings.hasdata(dataurl=source):
             return source
 
     def read(self, sources: list):
@@ -41,33 +51,6 @@ class Sites:
         streams = streams.rename(columns=self.fields)
 
         return streams
-
-    @staticmethod
-    def format(blob, state: str):
-        """
-        :param blob:
-            A DataFrame of raw sites data
-
-        :param state:
-            The 2 digit state code, in string form.
-
-        :return:
-            A DataFrame wherein the fields of interest have been appropriately
-            formatted; w.r.t. expected type
-        """
-
-        # For 'TRIFID', this (a) removes leading & trailing spaces, and subsequently (b) replaces
-        # empty cells with np.nan
-        blob['TRIFID'] = blob['TRIFID'].str.strip().replace(to_replace='', value=np.nan)
-
-        # Enforce type float
-        for field in ['LATITUDE', 'LONGITUDE']:
-            blob[field] = dd.to_numeric(arg=blob[field], errors='coerce')
-
-        # State
-        blob['STATEGEOID'] = state
-
-        return blob
 
     def filter(self, blob):
         """
@@ -111,7 +94,7 @@ class Sites:
         streams = self.read(sources=sources)
 
         # Ascertain field attributes
-        formatted = self.format(blob=streams, state=state)
+        formatted = self.settings.format(blob=streams, state=state)
 
         # Filtering-out anomalies and duplicates
         computations = self.filter(blob=formatted.copy())
