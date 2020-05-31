@@ -18,12 +18,8 @@ class Sites:
         api = src.algorithms.triservices.api.API()
         self.url = api.url()
 
-        settings = src.algorithms.triservices.settings.Settings()
-        self.fields, self.names, self.types = settings.getattributes()
-        self.stringfields = settings.getstringfields()
-
-        self.kwargs = {'usecols': self.fields, 'header': 0, 'encoding': 'UTF-8',
-                       'sep': ',', 'dtype': self.types}
+        self.settings = src.algorithms.triservices.settings.Settings()
+        self.fields, self.names, self.kwargs = self.settings.getattributes()
 
     def read(self, source):
         """
@@ -38,14 +34,6 @@ class Sites:
             raise ('OS Error {0}'.format(err))
 
         return data.rename(columns=self.names)
-
-    def format(self, blob: dd.DataFrame):
-
-        data = blob.copy()
-        for field in self.stringfields:
-            data[field] = data[field].fillna(value='')
-
-        return data
 
     @staticmethod
     def getcoordinates(blob: dd.DataFrame):
@@ -104,7 +92,7 @@ class Sites:
         streams = self.read(source=source)
 
         # Address NaN str cells
-        streams = self.format(blob=streams)
+        streams = self.settings.format(blob=streams)
 
         # Calculate decimal coordinates
         streams = self.getcoordinates(blob=streams)

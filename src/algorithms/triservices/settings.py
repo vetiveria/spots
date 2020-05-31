@@ -1,3 +1,4 @@
+import dask.dataframe as dd
 import pandas as pd
 
 
@@ -10,8 +11,9 @@ class Settings:
     @staticmethod
     def attributes() -> pd.DataFrame:
 
-        urlstring = 'https://raw.githubusercontent.com/greyhypotheses/hub/develop/' \
-                    'data/countries/us/environment/toxins/facilitiesServices.csv'
+        urlstring = 'https://raw.githubusercontent.com/greyhypotheses/dictionaries/develop/' \
+                    'spot/src/algorithms/triservices/attributes.csv'
+
         try:
             data = pd.read_csv(urlstring, header=0, encoding='UTF-8')
         except OSError as err:
@@ -27,7 +29,10 @@ class Settings:
         names = attributes[['field', 'rename']].set_index(keys='field').to_dict(orient='dict')['rename']
         types = attributes[['field', 'type']].set_index(keys='field').to_dict(orient='dict')['type']
 
-        return fields, names, types
+        kwargs = {'usecols': fields, 'header': 0, 'encoding': 'UTF-8',
+                  'sep': ',', 'dtype': types}
+
+        return fields, names, kwargs
 
     def getstringfields(self) -> list:
 
@@ -35,3 +40,15 @@ class Settings:
         fields = attributes.loc[attributes.type == 'str', 'rename'].to_list()
 
         return fields
+
+    def format(self, blob: dd.DataFrame):
+
+        data = blob.copy()
+        for field in self.getstringfields():
+            data[field] = data[field].str.strip().fillna(value='')
+
+        data['ZIP_CODE'] = data['ZIP_CODE'].replace(to_replace='[^0-9]', value='', regex=True)
+        data['ZIP_CODE'] = data['ZIP_CODE'].replace(to_replace='', value='0', regex=False)
+        data['ZIP_CODE'] = dd.to_numeric(arg=data.ZIP_CODE, errors='coerce')
+
+        return data
