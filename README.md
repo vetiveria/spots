@@ -37,24 +37,14 @@ The suggestions of geopandas, https://geopandas.org/install.html, fail
     conda config --env --set channel_priority strict
     conda install python=3.7 geopandas
 ```
+
 Instead
 
 ```bash
   conda create --prefix ...environment
   conda activate environment
 
-  conda install -c anaconda python=3.7.7
-  conda install -c anaconda geopandas
-  conda install -c anaconda geopy
-  conda install -c anaconda nodejs
-  conda install -c anaconda jupyterlab    
-  conda install -c anaconda pywin32    
-  conda install -c anaconda pytest
-  conda install -c anaconda coverage
-  conda install -c anaconda pytest-cov
-  conda install -c anaconda pylint
-  conda install -c anaconda pyyaml    
-
+  conda install -c anaconda python=3.7.7 geopandas geopy nodejs jupyterlab pywin32 pytest coverage pytest-cov pylint pyyaml    
 ```
 
 Next time set-up
