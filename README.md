@@ -1,31 +1,15 @@
 ## Spots
 
-Probable toxin release spots.
+Probable Toxics Release (TR) spots.  These notes are updates continuously ...
 
 <br>
-<br>
 
-### Notes
 
-These notes are updates continuously ...
+### Python Enviroment
 
-<br>
-<br>
+In preparation for Docker, etc.
 
-#### Bash
-
-Beware of bash files created within a Windows environment.  The conversion
-
-```bash
-  dos2unix.exe *.sh
-```
-
-might be required.
-
-<br>
-<br>
-
-#### Anaconda
+##### Anaconda
 
 The suggestions of geopandas, https://geopandas.org/install.html, fail
 
@@ -44,7 +28,8 @@ Instead
   conda create --prefix ...environment
   conda activate environment
 
-  conda install -c anaconda python=3.7.7 geopandas geopy nodejs jupyterlab pywin32 pytest coverage pytest-cov pylint pyyaml    
+  conda install -c anaconda python=3.7.7 geopandas geopy nodejs jupyterlab
+                   pywin32 pytest coverage pytest-cov pylint pyyaml    
 ```
 
 Next time set-up
@@ -55,9 +40,8 @@ Next time set-up
 ```
 
 <br>
-<br>
 
-#### VENV
+##### VENV
 
 An option, ``virtual env`` instead of ``conda``; details w.r.t. [virtual env](https://packaging.python.org/guides/installing-using-pip-and-virtual-environments/).  Ensure that the pip version is ≥ 20.0.2.  Also required: [Microsoft C++ Build Tools](https://visualstudio.microsoft.com/visual-cpp-build-tools/)
 
@@ -73,11 +57,8 @@ pip install numpy
 Prior to installing [geopandas via pip](https://geopandas.org/install.html#installing-with-pip) ``numpy`` must be installed, and a set of [wheels](https://www.lfd.uci.edu/~gohlke/pythonlibs/#pyproj) are required; shapely, fiona, pyproj, and rtree.  Use the command `pip install env\Scripts\{...}.whl` to install wheel files; the command assumes that the .whl files in question are hosted by env\Scripts\.
 
 <br>
-<br>
 
-
-
-#### The Requirements
+##### The Requirements
 
 ````markdown
     pip freeze -r docs/filter.txt > requirements.txt
@@ -85,17 +66,38 @@ Prior to installing [geopandas via pip](https://geopandas.org/install.html#insta
 
 The file [filter.txt](./docs/filter.txt) summarises the directly installed packages.  Hence, [filter.txt](./docs/filter.txt) is used to create a demarcated [requirements.txt](requirements.txt)
 
+
 <br>
 <br>
 
-#### Standards
+
+### Operating Systems Peculiarities
+
+##### Bash
+
+Beware of bash files created within a Windows environment.  The conversion
+
+```bash
+  dos2unix.exe *.sh
+```
+
+might be required.
+
+
+<br>
+<br>
+
+
+### Standards
 
 * pylint --generate-rcfile > .pylintrc
 
+
 <br>
 <br>
 
-#### Misc
+
+### Misc
 
 * https://jupyterlab.readthedocs.io/en/stable/index.html
 * https://jupyterlab.readthedocs.io/en/stable/getting_started/starting.html
