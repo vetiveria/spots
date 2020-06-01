@@ -4,8 +4,6 @@ import geopandas as gpd
 
 import src.boundaries.shapes
 
-shapes = src.boundaries.shapes.Shapes()
-
 
 class Boundaries:
     """
@@ -19,6 +17,7 @@ class Boundaries:
                     e.g., 4326 (https://epsg.io/4326)
         """
         self.crs = crs
+        self.shapes = src.boundaries.shapes.Shapes()
 
     def coordinates(self, blob: gpd.GeoDataFrame) -> gpd.GeoDataFrame:
         """
@@ -43,7 +42,7 @@ class Boundaries:
         :return:
         """
 
-        outlines = shapes.request(blob=blob, path=path, ext=ext, filestring=filestring)
+        outlines = self.shapes.request(blob=blob, path=path, ext=ext, filestring=filestring)
         outlines = self.coordinates(outlines)
 
         return outlines
