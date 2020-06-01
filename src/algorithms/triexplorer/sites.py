@@ -88,7 +88,8 @@ class Sites:
 
         # The list of a state's data URL strings
         nodes = [dask.delayed(self.feed)(state, year) for year in list(self.years)]
-        sources = dask.compute(nodes, scheduler='processes')[0]
+        urlstrings = [node for node in nodes if node is not None]
+        sources = dask.compute(urlstrings, scheduler='processes')[0]
 
         # Reading-in
         streams = self.read(sources=sources)
