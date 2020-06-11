@@ -4,7 +4,6 @@ import pandas as pd
 class Intersections:
 
     def __init__(self):
-
         self.name = ''
 
     @staticmethod
@@ -16,8 +15,10 @@ class Intersections:
         :param indices: The lines whose values will be estimated
         """
 
-        stream.loc[indices, 'LATITUDE_x'] = stream.loc[indices, 'LATITUDE_x'].combine_first(stream.loc[indices, 'LATITUDE_y'])
-        stream.loc[indices, 'LONGITUDE_x'] = stream.loc[indices, 'LONGITUDE_x'].combine_first(stream.loc[indices, 'LONGITUDE_y'])
+        stream.loc[indices, 'LATITUDE_x'] = stream.loc[indices, 'LATITUDE_x'].combine_first(
+            stream.loc[indices, 'LATITUDE_y'])
+        stream.loc[indices, 'LONGITUDE_x'] = stream.loc[indices, 'LONGITUDE_x'].combine_first(
+            stream.loc[indices, 'LONGITUDE_y'])
         stream.loc[indices, 'STATEGEOID'] = state
         stream.loc[indices, 'FACILITY'] = stream.loc[indices, 'FACILITY'].combine_first(stream.loc[indices, 'query'])
 
@@ -28,7 +29,6 @@ class Intersections:
 
     @staticmethod
     def outliers(stream: pd.DataFrame):
-
         return stream.LATITUDE.isna() | stream.LONGITUDE.isna()
 
     def request(self, blob: pd.DataFrame, state: str):
