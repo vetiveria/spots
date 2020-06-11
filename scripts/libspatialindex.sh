@@ -1,5 +1,6 @@
 #!/bin/bash
 
+# install
 apt-get install -qq curl g++ make
 
 # Parameters

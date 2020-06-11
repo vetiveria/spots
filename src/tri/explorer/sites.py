@@ -1,8 +1,8 @@
 import dask
 import dask.dataframe as dd
 
-import src.algorithms.triexplorer.api
-import src.algorithms.triexplorer.settings
+import src.tri.explorer.api
+import src.tri.explorer.settings
 
 
 class Sites:
@@ -11,12 +11,12 @@ class Sites:
         """
         The constructor
         """
-        self.settings = src.algorithms.triexplorer.settings.Settings()
+        self.settings = src.tri.explorer.settings.Settings()
         self.pattern = self.settings.pattern
         self.years = self.settings.years
         self.fields, self.kwargs = self.settings.getattributes()
 
-        api = src.algorithms.triexplorer.api.API()
+        api = src.tri.explorer.api.API()
         self.url = api.url()
 
     def feed(self, state: str, year: int):
@@ -35,15 +35,15 @@ class Sites:
         if self.settings.hasdata(dataurl=source):
             return source
 
-    def read(self, sources: list):
+    def read(self, urlstrings: list):
         """
         Note, in this case pandas is instructed to drop 'bad lines'
 
-        :param sources: The URL strings of the data
+        :param urlstrings: The URL strings of the data
         """
 
         try:
-            streams = dd.read_csv(urlpath=sources, blocksize=None, **self.kwargs)
+            streams = dd.read_csv(urlpath=urlstrings, blocksize=None, **self.kwargs)
         except OSError as err:
             raise ("OS Error: {0}".format(err))
 
@@ -87,12 +87,12 @@ class Sites:
         """
 
         # The list of a state's data URL strings
-        nodes = [dask.delayed(self.feed)(state, year) for year in list(self.years)]
-        urlstrings = [node for node in nodes if node is not None]
-        sources = dask.compute(urlstrings, scheduler='processes')[0]
+        sources = [dask.delayed(self.feed)(state, year) for year in list(self.years)]
+        nodes = dask.compute(sources, scheduler='processes')[0]
+        urlstrings = [node for node in nodes if isinstance(node, str)]
 
         # Reading-in
-        streams = self.read(sources=sources)
+        streams = self.read(urlstrings=urlstrings)
 
         # Ascertain field attributes
         formatted = self.settings.format(blob=streams, state=state)

@@ -3,8 +3,8 @@ import math
 import dask.dataframe as dd
 import numpy as np
 
-import src.algorithms.triservices.api
-import src.algorithms.triservices.settings
+import src.tri.services.api
+import src.tri.services.settings
 import src.functions.geodetic
 
 
@@ -15,10 +15,10 @@ class Sites:
         The constructor
         """
 
-        api = src.algorithms.triservices.api.API()
+        api = src.tri.services.api.API()
         self.url = api.url()
 
-        self.settings = src.algorithms.triservices.settings.Settings()
+        self.settings = src.tri.services.settings.Settings()
         self.fields, self.names, self.kwargs = self.settings.getattributes()
 
     def read(self, source):
