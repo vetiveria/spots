@@ -96,6 +96,22 @@ might be required.
 <br>
 <br>
 
+### Decimals
+
+This exercise is about hazardous waste in the states and territories of the U.S.A.  The locations of these facilities are encoded by the `fac_latitude` & `fac_longitude` fields.  However, a number of facilities do not have `fac_latitude` & `fac_longitude` values.  Hence, the latitude & longitude values of such facilities will be determined via `geopy`.  The decimal latitude & longitude values of
+
+* https://enviro.epa.gov/enviro/EF_METADATA_HTML.tri_page?p_column_name=FAC_LATITUDE
+
+* https://enviro.epa.gov/enviro/EF_METADATA_HTML.tri_page?p_column_name=FAC_LONGITUDE
+
+are determined via the formula
+
+* decimal form  $= \large{DD} + \frac{MM}{60} + \frac{SS}{3600}$
+
+which converts DDMMSS coordinates to decimal form; note that each fac_latitude/fac_longitude is of the form DDMMSS.
+
+<br>
+<br>
 
 ### Misc
 
