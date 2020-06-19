@@ -8,7 +8,7 @@ import src.tri.services.settings
 import src.functions.geodetic
 
 
-class Sites:
+class Request:
 
     def __init__(self):
         """
@@ -76,7 +76,7 @@ class Sites:
 
         return blob
 
-    def request(self, state: str):
+    def exc(self, state: str):
         """
         Gets the facilities data of a state
 
