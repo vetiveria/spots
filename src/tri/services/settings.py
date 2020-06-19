@@ -6,13 +6,20 @@ class Settings:
 
     def __init__(self):
 
-        self.name = ''
+        self.name = 'Settings'
 
     @staticmethod
     def attributes() -> pd.DataFrame:
+        """
+        Reads-in a set of data set attributes w.r.t. the data source TRI Services
 
+        :return:
+            DataFrame of attributes
+        """
+
+        # URL of attributes file ... switch to local
         urlstring = 'https://raw.githubusercontent.com/greyhypotheses/dictionaries/develop/' \
-                    'spot/src/algorithms/triservices/attributes.csv'
+                    'spots/src/tri/services/attributes.csv'
 
         try:
             data = pd.read_csv(urlstring, header=0, encoding='UTF-8')
