@@ -28,9 +28,9 @@ class Settings:
             DataFrame of attributes
         """
 
-        # URL of attributes file
+        # URL of attributes file ... switch to local
         urlstring = 'https://raw.githubusercontent.com/greyhypotheses/dictionaries/develop/' \
-                    'spot/src/algorithms/triexplorer/attributes.csv'
+                    'spots/src/tri/explorer/attributes.csv'
 
         # Read-in
         try:

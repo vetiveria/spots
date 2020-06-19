@@ -8,3 +8,4 @@ pylint
 PyYaml
 jupyterlab
 dask
+dotmap
