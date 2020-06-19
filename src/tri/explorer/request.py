@@ -5,7 +5,7 @@ import src.tri.explorer.api
 import src.tri.explorer.settings
 
 
-class Sites:
+class Request:
 
     def __init__(self):
         """
@@ -75,7 +75,7 @@ class Sites:
 
         return estimates
 
-    def request(self, state: str):
+    def exc(self, state: str):
         """
         Gets a state's sites
 
