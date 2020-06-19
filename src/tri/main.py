@@ -7,8 +7,8 @@ def main():
     settings = src.settings.Settings()
 
     # TRI Sources
-    explorer = src.tri.explorer.sites.Sites()
-    services = src.tri.services.sites.Sites()
+    explorer = src.tri.explorer.request.Request()
+    services = src.tri.services.request.Request()
 
     # Intersection? Union?
     intersections = src.tri.intersections.Intersections()
@@ -24,8 +24,8 @@ def main():
     for i in states.index:
         # Get the TRI facilities data of a state via (a) the old TRI repository, and (b) web services
         # Each depends on Dask
-        data, computations = explorer.request(state=states.GEOID[i])
-        rdata, rcomputations = services.request(state=states.STUSPS[i])
+        data, computations = explorer.exc(state=states.GEOID[i])
+        rdata, rcomputations = services.exc(state=states.STUSPS[i])
 
         # Merge
         both = data.merge(rdata, how='outer', on='TRIFID')
@@ -52,8 +52,8 @@ if __name__ == '__main__':
 
     import src.boundaries.boundaries
 
-    import src.tri.explorer.sites
-    import src.tri.services.sites
+    import src.tri.explorer.request
+    import src.tri.services.request
     import src.tri.intersections
     import src.tri.gazetteers
 
