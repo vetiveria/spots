@@ -113,6 +113,13 @@ which converts DDMMSS coordinates to decimal form; note that each fac_latitude/f
 <br>
 <br>
 
+### Chemicals
+
+* https://www.epa.gov/enviro/tri-reported-chemical-information-subject-area-model
+
+<br>
+<br>
+
 ### Misc
 
 * https://jupyterlab.readthedocs.io/en/stable/index.html
