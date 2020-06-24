@@ -29,8 +29,8 @@ class Settings:
         """
 
         # URL of attributes file ... switch to local
-        urlstring = 'https://raw.githubusercontent.com/greyhypotheses/dictionaries/develop/' \
-                    'spots/src/tri/explorer/attributes.csv'
+        urlstring = 'https://raw.githubusercontent.com/premodelling/dictionaries/develop/spots/' \
+                    'src/tri/explorer/attributes.csv'
 
         # Read-in
         try:
