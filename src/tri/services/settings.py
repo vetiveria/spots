@@ -18,8 +18,8 @@ class Settings:
         """
 
         # URL of attributes file ... switch to local
-        urlstring = 'https://raw.githubusercontent.com/greyhypotheses/dictionaries/develop/' \
-                    'spots/src/tri/services/attributes.csv'
+        urlstring = 'https://raw.githubusercontent.com/premodelling/dictionaries/develop/spots/' \
+                    'src/tri/services/attributes.csv'
 
         try:
             data = pd.read_csv(urlstring, header=0, encoding='UTF-8')
