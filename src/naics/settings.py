@@ -24,7 +24,7 @@ class Settings:
     def attributes() -> pd.DataFrame:
 
         # Switch to local
-        urlstring = 'https://raw.githubusercontent.com/greyhypotheses/dictionaries/develop/spots/src/naics/naics.csv'
+        urlstring = 'https://raw.githubusercontent.com/premodelling/dictionaries/develop/spots/src/naics/naics.csv'
 
         try:
             data = pd.read_csv(urlstring, header=0, encoding='UTF-8')
