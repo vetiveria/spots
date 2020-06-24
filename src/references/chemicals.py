@@ -56,7 +56,15 @@ class Chemicals:
         """
 
         chemicals = self.read()
+
+        # Not NaN
         chemicals = chemicals[chemicals.TRI_CHEM_ID.notna()]
+
+        # Not a trade secret
+        chemicals['TRI_CHEM_ID'] =  chemicals.TRI_CHEM_ID.str.strip().str.upper()
+        chemicals = chemicals[chemicals.TRI_CHEM_ID.str.upper() != 'TRD SECRT']
+
+        # Consistent unit of measure values
         chemicals['UNIT_OF_MEASURE'] = chemicals.UNIT_OF_MEASURE.str.strip().str.lower()
 
         return chemicals
