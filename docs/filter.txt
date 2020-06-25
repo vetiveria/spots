@@ -9,3 +9,4 @@ PyYaml
 jupyterlab
 dask
 dotmap
+quantities
