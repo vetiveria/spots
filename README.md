@@ -1,15 +1,22 @@
-## Spots
+About industries and toxins.  These notes are updated continuously.
 
-Probable Toxics Release (TR) spots.  These notes are updates continuously ...
-
-<br>
+* [Python Enviroment](#python-environment)
+  * [Anaconda](#anaconda)
+  * [VENV](#venv)
+  * [Requirements](#requirements)
+  * [Conventions](#conventions)
+* [Operating Systems Peculiarities](#operating-systems-peculiarities)
+  * [Bash](#bash)
+* [Decimals](#decimals)
+* [Chemicals](#chemicals)
+* [References](#references)
 
 
 ### Python Enviroment
 
 In preparation for Docker, etc.
 
-##### Anaconda
+#### Anaconda
 
 The suggestions of geopandas, https://geopandas.org/install.html, fail
 
@@ -41,7 +48,7 @@ Next time set-up
 
 <br>
 
-##### VENV
+#### VENV
 
 An option, ``virtual env`` instead of ``conda``; details w.r.t. [virtual env](https://packaging.python.org/guides/installing-using-pip-and-virtual-environments/).  Ensure that the pip version is ≥ 20.0.2.  Also required: [Microsoft C++ Build Tools](https://visualstudio.microsoft.com/visual-cpp-build-tools/)
 
@@ -58,13 +65,19 @@ Prior to installing [geopandas via pip](https://geopandas.org/install.html#insta
 
 <br>
 
-##### The Requirements
+#### Requirements
 
 ````markdown
     pip freeze -r docs/filter.txt > requirements.txt
 ````
 
 The file [filter.txt](./docs/filter.txt) summarises the directly installed packages.  Hence, [filter.txt](./docs/filter.txt) is used to create a demarcated [requirements.txt](requirements.txt)
+
+<br>
+
+#### Conventions
+
+* pylint --generate-rcfile > .pylintrc
 
 
 <br>
@@ -73,7 +86,7 @@ The file [filter.txt](./docs/filter.txt) summarises the directly installed packa
 
 ### Operating Systems Peculiarities
 
-##### Bash
+#### Bash
 
 Beware of bash files created within a Windows environment.  The conversion
 
@@ -82,16 +95,6 @@ Beware of bash files created within a Windows environment.  The conversion
 ```
 
 might be required.
-
-
-<br>
-<br>
-
-
-### Standards
-
-* pylint --generate-rcfile > .pylintrc
-
 
 <br>
 <br>
@@ -115,9 +118,9 @@ which converts DDMMSS coordinates to decimal form; note that each fac_latitude/f
 
 ### Chemicals
 
-**Important**: The toxins releases data encoded by [TRI_RELEASE_QTY](https://enviro.epa.gov/enviro/ef_metadata_html.ef_metadata_table?p_table_name=tri_release_qty&p_topic=tri) are the **total on-site disposal or other releases** data values.  In a nutshell, it is comparable with the on-site totals w.r.t. [EPA TRI Explorer Release Facility](https://enviro.epa.gov/triexplorer/tri_release.facility).  For example the 
+**Important**: The toxins releases data encoded by [TRI_RELEASE_QTY](https://enviro.epa.gov/enviro/ef_metadata_html.ef_metadata_table?p_table_name=tri_release_qty&p_topic=tri) are the **total on-site disposal or other releases** data values.  In a nutshell, it is comparable with the on-site totals w.r.t. [EPA TRI Explorer Release Facility](https://enviro.epa.gov/triexplorer/tri_release.facility).  For example the
 
-* 'Total On-site Disposal or Other Releases' field of [St. John Baptist Parish (2018)](https://enviro.epa.gov/triexplorer/release_fac?p_view=COFA&trilib=TRIQ1&sort=_VIEW_&sort_fmt=1&state=22&county=22095&chemical=All+chemicals&industry=ALL&year=2018&tab_rpt=1&fld=TRIID&fld=LNGLAT&fld=RELLBY&fld=TSFDSP) 
+* 'Total On-site Disposal or Other Releases' field of [St. John Baptist Parish (2018)](https://enviro.epa.gov/triexplorer/release_fac?p_view=COFA&trilib=TRIQ1&sort=_VIEW_&sort_fmt=1&state=22&county=22095&chemical=All+chemicals&industry=ALL&year=2018&tab_rpt=1&fld=TRIID&fld=LNGLAT&fld=RELLBY&fld=TSFDSP)
 
 wherein
 
@@ -136,14 +139,18 @@ built via model
 <br>
 <br>
 
-### Misc
+### References
 
+JupyterLab:
 * https://jupyterlab.readthedocs.io/en/stable/index.html
 * https://jupyterlab.readthedocs.io/en/stable/getting_started/starting.html
 
+Anaconda:
 * https://docs.anaconda.com/anaconda/install/silent-mode/
 * https://docs.anaconda.com/anaconda-adam/install/cloud/#installing-adam
 
+IDE:
 * https://www.jetbrains.com/idea/download/other.html
 
+Linux:
 * https://www.tecmint.com/18-tar-command-examples-in-linux/
