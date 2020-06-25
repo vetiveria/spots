@@ -11,6 +11,8 @@ About industries and toxins.  These notes are updated continuously.
 * [Chemicals](#chemicals)
 * [References](#references)
 
+<br>
+<br>
 
 ### Python Enviroment
 
