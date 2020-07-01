@@ -1,9 +1,17 @@
-About industries and toxins.  These notes are updated continuously.
+About industries and toxins.  These notes are updated continuously.  thus far, the data measures w.r.t. the tri, naics, and releases packages are
+
+package | measurements
+ --- | ---
+ src/tri | [spots](https://github.com/perennials/measurements/tree/master/src/spots)
+ src/naics | [naics](https://github.com/perennials/measurements/tree/master/src/naics)
+ src/releases | [designs](https://github.com/perennials/measurements/tree/master/src/designs)
+
+<br>
+<br>
 
 * [Python Enviroment](#python-environment)
   * [Anaconda](#anaconda)
   * [VENV](#venv)
-  * [Requirements](#requirements)
   * [Conventions](#conventions)
 * [Operating Systems Peculiarities](#operating-systems-peculiarities)
   * [Bash](#bash)
@@ -14,7 +22,7 @@ About industries and toxins.  These notes are updated continuously.
 <br>
 <br>
 
-### Python Enviroment
+### Python Environment
 
 In preparation for Docker, etc.
 
@@ -58,7 +66,7 @@ The file [filter.txt](./docs/filter.txt) summarises the directly installed packa
 
 * scikit-learn is included for release analysis purposes.  It is not used by `spots`, but it is used by `analysis`, i.e., cluster analysis.
 * The above applies to `matplotlib` & `seaborn`
-* `nodejs` cannot be included in `filter.txt` 
+* `nodejs` cannot be included in `filter.txt`
 
 <br>
 
