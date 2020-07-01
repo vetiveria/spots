@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Package parameter
+# Package
 package=Rtree-0.9.4
 
 # Unpack
