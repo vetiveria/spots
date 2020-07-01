@@ -19,4 +19,5 @@ cmake -DCMAKE_INSTALL_PREFIX=${directory} .
 make
 make install
 
+# Hence
 cp ${directory}lib/libspatialindex* /lib/
