@@ -48,6 +48,18 @@ Next time set-up
   conda config --env --set channel_priority strict
 ```
 
+In relation to requirements.txt
+
+````markdown
+    pip freeze -r docs/filter.txt > requirements.txt
+````
+
+The file [filter.txt](./docs/filter.txt) summarises the directly installed packages.  Hence, [filter.txt](./docs/filter.txt) is used to create a demarcated [requirements.txt](requirements.txt).  Note:
+
+* scikit-learn is included for release analysis purposes.  It is not used by `spots`, but it is used by `analysis`, i.e., cluster analysis.
+* The above applies to `matplotlib` & `seaborn`
+* `nodejs` cannot be included in `filter.txt` 
+
 <br>
 
 #### VENV
@@ -64,16 +76,6 @@ pip install numpy
 <br>
 
 Prior to installing [geopandas via pip](https://geopandas.org/install.html#installing-with-pip) ``numpy`` must be installed, and a set of [wheels](https://www.lfd.uci.edu/~gohlke/pythonlibs/#pyproj) are required; shapely, fiona, pyproj, and rtree.  Use the command `pip install env\Scripts\{...}.whl` to install wheel files; the command assumes that the .whl files in question are hosted by env\Scripts\.
-
-<br>
-
-#### Requirements
-
-````markdown
-    pip freeze -r docs/filter.txt > requirements.txt
-````
-
-The file [filter.txt](./docs/filter.txt) summarises the directly installed packages.  Hence, [filter.txt](./docs/filter.txt) is used to create a demarcated [requirements.txt](requirements.txt)
 
 <br>
 
