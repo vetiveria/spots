@@ -1,4 +1,4 @@
-About industries and toxins.  These notes are updated continuously.  thus far, the data measures w.r.t. the tri, naics, and releases packages are
+About industries and toxins.  These notes are updated continuously.  Thus far, the data measures w.r.t. the tri, naics, and releases packages are
 
 package | measurements
  --- | ---
@@ -45,11 +45,11 @@ Instead
   conda create --prefix ...environment
   conda activate environment
 
-  conda install -c anaconda python=3.7.7 geopandas geopy nodejs jupyterlab
+  conda install -c anaconda python=3.7.7 geopandas nodejs jupyterlab
                    pywin32 pytest coverage pytest-cov pylint pyyaml    
 ```
 
-Next time set-up
+And geopy ... Next time set-up
 
 ```bash
   conda config --env --add channels anaconda
@@ -64,7 +64,7 @@ In relation to requirements.txt
 
 The file [filter.txt](./docs/filter.txt) summarises the directly installed packages.  Hence, [filter.txt](./docs/filter.txt) is used to create a demarcated [requirements.txt](requirements.txt).  Note:
 
-* scikit-learn is included for release analysis purposes.  It is not used by `spots`, but it is used by `analysis`, i.e., cluster analysis.
+* scikit-learn is included for **releases** analysis purposes.  It is not used by `spots`, but it is used by `analysis.ipynb` (Google Colaboratory).
 * The above applies to `matplotlib` & `seaborn`
 * `nodejs` cannot be included in `filter.txt`
 
