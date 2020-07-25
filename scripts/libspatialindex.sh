@@ -14,7 +14,7 @@ curl -L https://github.com/libspatialindex/libspatialindex/releases/download/${v
 # Switch directory
 cd ${package}
 
-# make
+# make section
 cmake -DCMAKE_INSTALL_PREFIX=${directory} .
 make
 make install
