@@ -2,9 +2,9 @@ About industries and toxins.  These notes are updated continuously.  Thus far, t
 
 package | measurements
  --- | ---
- src/tri | [spots](https://github.com/perennials/measurements/tree/master/src/spots)
- src/naics | [naics](https://github.com/perennials/measurements/tree/master/src/naics)
- src/releases | [designs](https://github.com/perennials/measurements/tree/master/src/designs)
+ src/tri | [spots](https://github.com/environmentalhazards/measurements/tree/master/src/spots)
+ src/naics | [naics](https://github.com/environmentalhazards/measurements/tree/master/src/naics)
+ src/releases | [designs](https://github.com/environmentalhazards/measurements/tree/master/src/designs)
 
 <br>
 <br>
@@ -49,7 +49,13 @@ Instead
                    pywin32 pytest coverage pytest-cov pylint pyyaml    
 ```
 
-And geopy ... Next time set-up
+And for geopy, quantities, and dotmap
+
+```bash
+  pip install ...    
+```
+
+Next time set-up
 
 ```bash
   conda config --env --add channels anaconda
@@ -64,7 +70,7 @@ In relation to requirements.txt
 
 The file [filter.txt](./docs/filter.txt) summarises the directly installed packages.  Hence, [filter.txt](./docs/filter.txt) is used to create a demarcated [requirements.txt](requirements.txt).  Note:
 
-* scikit-learn is included for **releases** analysis purposes.  It is not used by `spots`, but it is used by `analysis.ipynb` (Google Colaboratory).
+* scikit-learn is included for **releases** analysis purposes.  It is not used by `spots`, but it is used by `analysis.ipynb`, which is hosted by Google Colaboratory.  (Cf. `analysis.ipynb` and the `data.ipynb` file of this repository, then update these notes accordingly.)
 * The above applies to `matplotlib` & `seaborn`
 * `nodejs` cannot be included in `filter.txt`
 
