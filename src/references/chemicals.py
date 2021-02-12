@@ -16,8 +16,8 @@ class Chemicals:
 
         self.dataurl = 'https://data.epa.gov/efservice/TRI_CHEM_INFO/CSV'
 
-        self.metadataurl = 'https://raw.githubusercontent.com/premodelling/dictionaries/develop/spots' \
-                           '/src/references/chemicals.csv'
+        self.metadataurl = 'https://raw.githubusercontent.com/vetiveria/spots/develop' \
+                           'resources/references/chemicals.csv'
 
     def attributes(self) -> (list, dict, dict):
         """
