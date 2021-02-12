@@ -2,13 +2,6 @@
 
 # A script file for Google Colaboratory
 
-
-# TeX
-# apt-get install texlive-latex-extra  &> tex.log
-# apt-get install ghostscript &>> tex.log
-# apt-get install dvipng &>> tex.log
-
-
 <<COMMENT
   Setting-up
 COMMENT
@@ -20,6 +13,7 @@ rm -rf logs/ && rm -rf scripts/ && rm -rf src/
 mkdir logs
 
 
+
 <<COMMENT
   Unload archives
   https://linux.die.net/man/1/wget
@@ -28,6 +22,7 @@ COMMENT
 # scripts & src
 wget -q https://github.com/vetiveria/spots/raw/develop/scripts.zip
 wget -q https://github.com/vetiveria/spots/raw/develop/src.zip
+
 
 
 <<COMMENT
@@ -42,6 +37,7 @@ rm -rf scrips.zip
 # unzip src
 unzip -u -q src.zip
 rm -rf src.zip
+
 
 
 <<COMMENT
@@ -64,3 +60,13 @@ chmod +x scripts/rtree.sh
 
 # quantities
 !pip install quantities &> logs/quantities.log
+
+
+
+<<COMMENT
+  Later: TeX
+COMMENT
+# tex
+# apt-get install texlive-latex-extra  &> logs/tex.log
+# apt-get install ghostscript &>> logs/tex.log
+# apt-get install dvipng &>> logs/tex.log
