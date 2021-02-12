@@ -9,9 +9,9 @@ class Settings:
     @staticmethod
     def attributes() -> pd.DataFrame:
 
-        # Switch to local
-        urlstring = 'https://raw.githubusercontent.com/premodelling/dictionaries/develop/spots/' \
-                    'src/releases/releases.csv'
+        # Switch to local.  Facility level attributes.
+        urlstring = 'https://raw.githubusercontent.com/vetiveria/spots/develop/' \
+                    'resources/releases/releases.csv'
 
         try:
             data = pd.read_csv(urlstring, header=0, encoding='UTF-8')
