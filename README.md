@@ -21,7 +21,7 @@ About industries and toxins.  These notes are updated continuously.  Thus far, t
 Table links to data sets upcoming ...
 
 package | measurements | comment
- --- | --- | ---
+ :--- | --- | ---
  src/tri | [spots](https://github.com/vetiveria/) | Creates facilities inventories per state. ... <div color="grey"><i>warehouse/spots</i></div>
  src/naics | [naics](https://github.com/vetiveria/) | Industry classifications of facilities.  **In progress**. ... _warehouse/naics_
  src/releases | [designs](https://github.com/vetiveria/) | Facility level releases are used to create county level design matrices per state. ... _warehouse/designs_
