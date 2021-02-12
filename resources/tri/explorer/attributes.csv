@@ -1,0 +1,7 @@
+"field","type"
+"ROW","str"
+"FACILITY","str"
+"TRIFID","str"
+"LATITUDE","str"
+"LONGITUDE","str"
+"TOTAL","str"

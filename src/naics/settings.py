@@ -1,6 +1,7 @@
-import pandas as pd
-import dotmap
 import os
+
+import dotmap
+import pandas as pd
 
 
 class Settings:
@@ -8,6 +9,7 @@ class Settings:
     def __init__(self):
 
         # The industry sector, subsector, & group w.r.t. the NAICS_CODE string
+        # In future use collections.namedtuple INSTEAD OF dotmap
         self.sector, self.subsector, self.group = dotmap.DotMap({'start': 0, 'end': 2}), \
                                                   dotmap.DotMap({'start': 0, 'end': 3}), \
                                                   dotmap.DotMap({'start': 0, 'end': 4})
@@ -24,7 +26,7 @@ class Settings:
     def attributes() -> pd.DataFrame:
 
         # Switch to local
-        urlstring = 'https://raw.githubusercontent.com/premodelling/dictionaries/develop/spots/src/naics/naics.csv'
+        urlstring = 'https://raw.githubusercontent.com/vetiveria/spots/develop/resources/naics/naics.csv'
 
         try:
             data = pd.read_csv(urlstring, header=0, encoding='UTF-8')

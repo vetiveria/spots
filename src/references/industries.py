@@ -13,8 +13,8 @@ class Industries:
 
     def __init__(self):
 
-        self.dataurl = 'https://raw.githubusercontent.com/discourses/hub/develop/data/' \
-                           'countries/us/industries/industrycode.csv'
+        self.dataurl = 'https://raw.githubusercontent.com/vetiveria/spots/develop/' \
+                       'resources/references/industrycode.csv'
 
     def read(self):
 
