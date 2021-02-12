@@ -61,5 +61,7 @@ class Request:
         data.visualize(filename='naics', format='pdf')
 
         # Write
+        # https://docs.dask.org/en/latest/dataframe-api.html#dask.dataframe.DataFrame.to_csv
+        kwargs = {'index': False, 'header': True, 'encoding': 'UTF-8'}
         names = [os.path.join(self.path, state + '.csv') for state in states]
-        data.to_csv(names)
+        data.to_csv(names, **kwargs)
