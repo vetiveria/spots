@@ -1,0 +1,66 @@
+#!/bin/bash
+
+# A script file for Google Colaboratory
+
+
+# TeX
+# apt-get install texlive-latex-extra  &> tex.log
+# apt-get install ghostscript &>> tex.log
+# apt-get install dvipng &>> tex.log
+
+
+<<COMMENT
+  Setting-up
+COMMENT
+
+# clean-up
+rm -rf logs/ && rm -rf scripts/ && rm -rf src/
+
+# prepare
+mkdir logs
+
+
+<<COMMENT
+  Unload archives
+  https://linux.die.net/man/1/wget
+COMMENT
+
+# scripts & src
+wget -q https://github.com/vetiveria/spots/raw/develop/scripts.zip
+wget -q https://github.com/vetiveria/spots/raw/develop/src.zip
+
+
+<<COMMENT
+  Dearchive
+  https://linux.die.net/man/1/unzip
+COMMENT
+
+# unzip scripts
+unzip -u -q scripts.zip
+rm -rf scrips.zip
+
+# unzip src
+unzip -u -q src.zip
+rm -rf src.zip
+
+
+<<COMMENT
+  Install packages
+COMMENT
+
+# libspatialindex
+chmod +x scripts/libspatialindex.sh
+./scripts/libspatialindex.sh &> logs/libspatialindex.log
+
+# rtree
+chmod +x scripts/rtree.sh
+./scripts/rtree.sh &> logs/rtree.log
+
+# geopandas
+!pip install geopandas &> logs/geopandas.log
+
+# dotmap
+!pip install dotmap &> logs/dotmap.log
+
+# quantities
+!pip install quantities &> logs/quantities.log
