@@ -58,7 +58,7 @@ class Request:
         Builds the API URL strings w.r.t. a state & year of interest
 
         :param state: The state abbreviation, i.e., STUSPS, of a U.S.A. state or territory
-        :param year: One of the relevant data years, as oulined in src.settings.Settings().years
+        :param year: One of the relevant data years, as outlined in src.settings.Settings().years
 
         :return: An API URL string
         """
