@@ -53,13 +53,13 @@ chmod +x scripts/rtree.sh
 ./scripts/rtree.sh &> logs/rtree.log
 
 # geopandas
-!pip install geopandas &> logs/geopandas.log
+pip install geopandas &> logs/geopandas.log
 
 # dotmap
-!pip install dotmap &> logs/dotmap.log
+pip install dotmap &> logs/dotmap.log
 
 # quantities
-!pip install quantities &> logs/quantities.log
+pip install quantities &> logs/quantities.log
 
 
 
