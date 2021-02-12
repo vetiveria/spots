@@ -8,8 +8,9 @@ About industries and toxins.  These notes are updated continuously.  Thus far, t
   * [Anaconda](#anaconda)
   * [Requirements](#requirements)
   * [Conventions](#conventions)
-* [Operating Systems Peculiarities](#operating-systems-peculiarities)
 * [References](#references)
+* [Operating Systems Peculiarities](#operating-systems-peculiarities)
+
 
 <br>
 <br>
@@ -96,8 +97,9 @@ Next time set-up
   conda config --env --set channel_priority strict
 ```
 
+<br>
 
-**Failures**
+**failures**
 
 The suggestions of geopandas, https://geopandas.org/install.html, fail
 
@@ -110,7 +112,9 @@ The suggestions of geopandas, https://geopandas.org/install.html, fail
     conda install python=3.7 geopandas
 ```
 
-**VENV**
+<br>
+
+**venv**
 
 A development environment option is ``virtual env`` instead of ``conda``; details w.r.t. [virtual env](https://packaging.python.org/guides/installing-using-pip-and-virtual-environments/).  Ensure that the pip version is ≥ 20.0.2.  Also required: [Microsoft C++ Build Tools](https://visualstudio.microsoft.com/visual-cpp-build-tools/)
 
