@@ -46,7 +46,6 @@ Fields of interest
 
 * [releases](src/releases/releases.csv)
 
-
 <br>
 <br>
 
@@ -58,4 +57,20 @@ Obtained via TR_FACILITY & TRI_SUBMISSION_NAICS of
 
 Fields of interest
 
-* [naics](src/naics/naics.csv)
+* [naics](naics/naics.csv)
+
+References:
+
+* https://www.census.gov/programs-surveys/cbp/technical-documentation/reference/naics-descriptions.html
+* https://www.census.gov/programs-surveys/economic-census/guidance/understanding-naics.html
+* naics: https://www2.census.gov/programs-surveys/cbp/technical-documentation/reference/naics-descriptions/
+
+<br>
+<br>
+
+### Industries
+
+Data Source:
+
+* industry code: https://enviro.epa.gov/enviro/EF_METADATA_HTML.tri_page?p_column_name=INDUSTRY_CODE
+
