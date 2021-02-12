@@ -2,10 +2,10 @@
 
 # A script file for Google Colaboratory
 
+
 <<COMMENT
   Setting-up
 COMMENT
-
 # clean-up
 rm -rf logs/ && rm -rf scripts/ && rm -rf src/
 
@@ -18,7 +18,6 @@ mkdir logs
   Unload archives
   https://linux.die.net/man/1/wget
 COMMENT
-
 # scripts & src
 wget -q https://github.com/vetiveria/spots/raw/develop/scripts.zip
 wget -q https://github.com/vetiveria/spots/raw/develop/src.zip
@@ -29,7 +28,6 @@ wget -q https://github.com/vetiveria/spots/raw/develop/src.zip
   Dearchive
   https://linux.die.net/man/1/unzip
 COMMENT
-
 # unzip scripts
 unzip -u -q scripts.zip
 rm -rf scrips.zip
@@ -43,7 +41,6 @@ rm -rf src.zip
 <<COMMENT
   Install packages
 COMMENT
-
 # libspatialindex
 chmod +x scripts/libspatialindex.sh
 ./scripts/libspatialindex.sh &> logs/libspatialindex.log
