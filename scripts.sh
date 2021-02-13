@@ -60,6 +60,10 @@ chmod +x scripts/libspatialindex.sh
 chmod +x scripts/rtree.sh
 ./scripts/rtree.sh &> logs/rtree.log
 
+# dask
+pip install dask[complete] &> dask.log
+pip install cloudpickle==1.6.0 &> cloudpickle.log
+
 # geopandas
 pip install geopandas &> logs/geopandas.log
 
