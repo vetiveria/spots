@@ -27,10 +27,21 @@ wget -q https://github.com/vetiveria/spots/raw/develop/src.zip
 <<COMMENT
   Dearchive
   https://linux.die.net/man/1/unzip
+
+  In the case of a specific directory
+
+    unzip -u -d -q directory src.zip
+
+  wherein the options -u, -d, & -q denote update, specified directory, and quietly,
+  respectively. Additionally, for archive content previewing purposes
+
+    unzip -l src.zip
+    unzip -v src.zip
+
 COMMENT
 # unzip scripts
 unzip -u -q scripts.zip
-rm -rf scrips.zip
+rm -rf scripts.zip
 
 # unzip src
 unzip -u -q src.zip
