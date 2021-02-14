@@ -25,7 +25,7 @@ package | measurements | comment
  src/tri | [tri](https://github.com/vetiveria/) | Creates facilities inventories per state.  (warehouse/tri)
  src/naics | [naics](https://github.com/vetiveria/) | Industry classifications of facilities.  (warehouse/naics)
  src/releases | [designs](https://github.com/vetiveria/) | Facility level releases are used to create county level design matrices per state.  (warehouse/designs)
- src/references | [references](https://github.com/vetiveria/) | Examples: industry codes, chemicals reference, etc.  (warehouse/references)
+ src/references | [references](https://github.com/vetiveria/) | Examples: The **(a)** [north american industry classification codes](https://www.census.gov/naics/), **(b)** [industry sectors & codes](https://www.epa.gov/toxics-release-inventory-tri-program/tri-covered-industry-sectors) of the [toxics release inventory program](https://www.epa.gov/toxics-release-inventory-tri-program), **(c)** chemical names, etc.  (warehouse/references)
 
 <br>
 
