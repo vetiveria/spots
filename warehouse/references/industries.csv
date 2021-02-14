@@ -1,0 +1,31 @@
+industry_code,name
+2121,Coal Mining
+2122,Metal Mining
+2211,Electric Utilities
+311,Food
+3121,Beverages
+3122,Tobacco
+313,Textiles
+314,Textile Product
+315,Apparel
+316,Leather
+321,Wood Products
+322,Paper
+323,Printing
+324,Petroleum
+325,Chemicals
+326,Plastics and Rubber
+327,Nonmetallic Mineral Product
+331,Primary Metals
+332,Fabricated Metals
+333,Machinery
+334,Computers and Electronic Products
+335,Electrical Equipment
+336,Transportation Equipment
+337,Furniture
+339,Miscellaneous Manufacturing
+4246,Chemical Wholesalers
+4247,Petroleum Bulk Terminals
+511,Publishing
+562,Hazardous Waste
+999,Other
