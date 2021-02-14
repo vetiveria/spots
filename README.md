@@ -21,12 +21,12 @@ About industries and toxins.  These notes are updated continuously.  Thus far, t
 * data.ipynb <br> [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/vetiveria/spots/blob/develop/data.ipynb)
 
 
-|package |outputs |comment|
-|:--- |:--- |:---|
-|src/tri | [warehouse/tri](./warehouse/tri) | Creates facilities inventories per state.|
-|src/naics | [warehouse/naics](./warehouse/naics) | Industry classifications of facilities.|
-|src/releases | [warehouse/designs](./warehouse/designs) | Facility level releases are used to create county level design matrices per state.|
-|src/references | [warehouse/references](./warehouse/references) | Examples: The **(a)** [north american industry classification codes](https://www.census.gov/naics/), **(b)** [industry sectors & codes](https://www.epa.gov/toxics-release-inventory-tri-program/tri-covered-industry-sectors) of the [toxics release inventory program](https://www.epa.gov/toxics-release-inventory-tri-program), **(c)** chemical names, etc.|
+package |outputs |comment
+:--- |:--- |:---
+src/tri | [warehouse/tri](./warehouse/tri) | Creates facilities inventories per state.
+src/naics | [warehouse/naics](./warehouse/naics) | Industry classifications of facilities.
+src/releases | [warehouse/designs](./warehouse/designs) | Facility level releases are used to create county level design matrices per state.
+src/references | [warehouse/references](./warehouse/references) | Examples: The **(a)** [north american industry classification codes](https://www.census.gov/naics/), **(b)** [industry sectors & codes](https://www.epa.gov/toxics-release-inventory-tri-program/tri-covered-industry-sectors) of the [toxics release inventory program](https://www.epa.gov/toxics-release-inventory-tri-program), **(c)** chemical names, etc.
 
 <br>
 
