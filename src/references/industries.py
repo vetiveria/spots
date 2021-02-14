@@ -16,7 +16,7 @@ class Industries:
         self.dataurl = 'https://raw.githubusercontent.com/vetiveria/spots/develop/' \
                        'resources/references/industrycode.csv'
 
-    def read(self):
+    def exc(self):
 
         try:
             industries = pd.read_csv(self.dataurl, header=0, sep=',', encoding='UTF-8')
