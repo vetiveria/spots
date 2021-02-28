@@ -85,7 +85,9 @@ Altogether
   conda activate environment
 
   conda install -c anaconda python=3.7.7 geopandas nodejs jupyterlab
-                   pywin32 pytest coverage pytest-cov pylint pyyaml    
+                   pywin32 pytest coverage pytest-cov pylint pyyaml
+                   
+  conda install -c anaconda python-graphviz   
 ```
 
 And for geopy, quantities, and dotmap
