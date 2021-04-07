@@ -79,7 +79,12 @@ Data Source:
 ### Chemicals
 
 * [Envirofacts Data Service API for TRI_CHEM_INFO](https://enviro.epa.gov/enviro/ef_metadata_html.ef_metadata_table?p_table_name=tri_chem_info&p_topic=tri)
+
 * [TRI Reported Chemical Information Subject Area Model](https://www.epa.gov/enviro/tri-reported-chemical-information-subject-area-model)
+
+* [Environmental Justics (Environmental Protection Agency)](https://www.epa.gov/environmentaljustice)
+  * [Environmental Justice Screening & Mapping Tool](https://www.epa.gov/ejscreen)
+  * [Mapping Tools for Communities to Identify Assets and Hazards in Local Areas](https://www.epa.gov/environmentaljustice/mapping-tools-communities-identify-assets-and-hazards-local-areas)
 
 <br>
 <br>
