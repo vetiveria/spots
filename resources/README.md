@@ -10,7 +10,9 @@ Due to the incomplete nature of the facilities data
 of [TRI Web Services](https://www.epa.gov/enviro/tri-reported-chemical-information-subject-area-model), facilities 
 data is collated via two sources:
 
-##### Via TRI Explorer
+<br>
+
+**Via TRI Explorer**
 
 URL
 
@@ -22,7 +24,7 @@ Fields read
 
 <br>
 
-##### Via TRI Web Services
+**Via TRI Web Services**
 
 Using the TRI_FACILITY data of [TRI Model](https://www.epa.gov/enviro/tri-reported-chemical-information-subject-area-model), i.e.,
 
