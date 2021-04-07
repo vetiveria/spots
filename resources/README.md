@@ -73,3 +73,15 @@ Data Source:
 
 * industry code: https://enviro.epa.gov/enviro/EF_METADATA_HTML.tri_page?p_column_name=INDUSTRY_CODE
 
+<br>
+<br>
+
+### Chemicals
+
+* [Envirofacts Data Service API for TRI_CHEM_INFO](https://enviro.epa.gov/enviro/ef_metadata_html.ef_metadata_table?p_table_name=tri_chem_info&p_topic=tri)
+* [TRI Reported Chemical Information Subject Area Model](https://www.epa.gov/enviro/tri-reported-chemical-information-subject-area-model)
+
+<br>
+<br>
+
+
