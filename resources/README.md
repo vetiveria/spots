@@ -89,6 +89,13 @@ Data Source:
   
   * [Mapping Tools for Communities to Identify Assets and Hazards in Local Areas](https://www.epa.gov/environmentaljustice/mapping-tools-communities-identify-assets-and-hazards-local-areas)
 
+* [Hazardous Air Pollutants](https://www.epa.gov/haps/initial-list-hazardous-air-pollutants-modifications)
+
+* R3350
+  * https://archive.epa.gov/oppt/3350/web/pdf/3350-fnl.pdf
+  
+  * [33/50 Program](https://nepis.epa.gov/Exe/ZyPDF.cgi/93000PAJ.PDF?Dockey=93000PAJ.PDF)
+
 <br>
 <br>
 
