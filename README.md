@@ -1,9 +1,7 @@
-About industries and toxins.  These notes are updated continuously.  Thus far, the data measures w.r.t. the tri, naics, and releases packages are
+About industries and toxins.  These notes are updated continuously; [more](https://vetiveria.github.io/)
 
 
 * [The Data](#the-data)
-  * [Releases](#releases)
-  * [Geography & Decimals](#geography--decimals)
 * [Development Environment](#development-environment)
   * [Anaconda](#anaconda)
   * [Requirements](#requirements)
