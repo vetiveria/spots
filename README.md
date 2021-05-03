@@ -20,56 +20,17 @@ About industries and toxins.  These notes are updated continuously.  Thus far, t
 
 * data.ipynb <br> [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/vetiveria/spots/blob/develop/data.ipynb)
 
-
-package |outputs |comment
+package |data |comment
 :--- |:--- |:---
-src/tri | [warehouse/tri](./warehouse/tri) | Creates facilities inventories per state.
-src/naics | [warehouse/naics](./warehouse/naics) | Industry classifications of facilities.
-src/releases | [warehouse/designs](./warehouse/designs) | Facility level releases are used to create county level design matrices per state.
-src/references | [warehouse/references](./warehouse/references) | Examples: The **(a)** [north american industry classification codes](https://www.census.gov/naics/), **(b)** [industry sectors & codes](https://www.epa.gov/toxics-release-inventory-tri-program/tri-covered-industry-sectors) of the [toxics release inventory program](https://www.epa.gov/toxics-release-inventory-tri-program), **(c)** chemical names, etc.
-
-<br>
-
-#### Releases
-
-**Important**: The toxins releases data encoded by [TRI_RELEASE_QTY](https://enviro.epa.gov/enviro/ef_metadata_html.ef_metadata_table?p_table_name=tri_release_qty&p_topic=tri) are the **total on-site disposal or other releases** data values.  In a nutshell, it is comparable with the on-site totals w.r.t. [EPA TRI Explorer Release Facility](https://enviro.epa.gov/triexplorer/tri_release.facility).  For example the
-
-* 'Total On-site Disposal or Other Releases' field of [St. John Baptist Parish (2018)](https://enviro.epa.gov/triexplorer/release_fac?p_view=COFA&trilib=TRIQ1&sort=_VIEW_&sort_fmt=1&state=22&county=22095&chemical=All+chemicals&industry=ALL&year=2018&tab_rpt=1&fld=TRIID&fld=LNGLAT&fld=RELLBY&fld=TSFDSP)
-
-wherein
-
-* state = 22
-* county = 22095
-* year = 2018
-
-is equivalent to the totals per (REPORTING_YEAR, TRI_FACILITY_ID, TRI_CHEM_ID) of
-
-* [tri_facility, tri_reporting_form, tri_release_qty model](https://data.epa.gov/efservice/TRI_FACILITY/STATE_ABBR/LA/STATE_COUNTY_FIPS_CODE/22095/TRI_REPORTING_FORM/REPORTING_YEAR/2018/TRI_RELEASE_QTY/CSV)
-
-built via model
-
-* https://www.epa.gov/enviro/tri-reported-chemical-information-subject-area-model
-
-<br>
-
-#### Geography & Decimals
-
-This exercise is about hazardous waste in the states and territories of the U.S.A.  The locations of these facilities are encoded by the `fac_latitude` & `fac_longitude` fields.  However, a number of facilities do not have `fac_latitude` & `fac_longitude` values.  Hence, the latitude & longitude values of such facilities will be determined via `geopy`.  The decimal latitude & longitude values of
-
-* https://enviro.epa.gov/enviro/EF_METADATA_HTML.tri_page?p_column_name=FAC_LATITUDE
-
-* https://enviro.epa.gov/enviro/EF_METADATA_HTML.tri_page?p_column_name=FAC_LONGITUDE
-
-are determined via the formula
-
-<img src="https://render.githubusercontent.com/render/math?math={ \qquad \mathstrut{DD} %2B \mathstrut{\large{\frac{MM}{60}}} %2B \mathstrut{\large{\frac{SS}{3600}}} }"></img>
-
-which converts DDMMSS coordinates to decimal form; note that each fac_latitude/fac_longitude is of the form DDMMSS.
+src/releases | [warehouse/designs](./warehouse/designs) | At present, each release value herein is the total amount of a toxin that has been released thus far in a county.
+src/tri | [warehouse/tri](./warehouse/tri) | Each facility's details, e.g., facility unique identifier, latitude, longitude, etc., per state.
+src/naics | [warehouse/naics](./warehouse/naics) | Each facility's set of industry classifications per state.
+src/references | [warehouse/references](./warehouse/references/naics.csv) | The reference sheet of the NAICS unique identifiers; ref. [north american industry classification codes](https://www.census.gov/naics/).
+ | [warehouse/references](./warehouse/references/industries.csv) | The reference sheet of EPA's idustry sectors; ref. [industry sectors & codes](https://www.epa.gov/toxics-release-inventory-tri-program/tri-covered-industry-sectors) of the [toxics release inventory program](https://www.epa.gov/toxics-release-inventory-tri-program)
+ | ... | chemical names
 
 <br>
 <br>
-
-
 
 
 ### Development Environment
@@ -88,6 +49,8 @@ Altogether
                    pywin32 pytest coverage pytest-cov pylint pyyaml
                    
   conda install -c anaconda python-graphviz   
+  
+  conda install -c anaconda xlrd
 ```
 
 And for geopy, quantities, and dotmap
