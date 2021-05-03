@@ -26,8 +26,8 @@ src/releases | [warehouse/designs](./warehouse/designs) | At present, each relea
 src/tri | [warehouse/tri](./warehouse/tri) | Each facility's details, e.g., facility unique identifier, latitude, longitude, etc., per state.
 src/naics | [warehouse/naics](./warehouse/naics) | Each facility's set of industry classifications per state.
 src/references | [warehouse/references](./warehouse/references/naics.csv) | The reference sheet of the NAICS unique identifiers; ref. [north american industry classification codes](https://www.census.gov/naics/).
- | [warehouse/references](./warehouse/references/industries.csv) | The reference sheet of EPA's idustry sectors; ref. [industry sectors & codes](https://www.epa.gov/toxics-release-inventory-tri-program/tri-covered-industry-sectors) of the [toxics release inventory program](https://www.epa.gov/toxics-release-inventory-tri-program)
- | ... | chemical names
+ &nbsp; | [warehouse/references](./warehouse/references/industries.csv) | The reference sheet of EPA's idustry sectors; ref. [industry sectors & codes](https://www.epa.gov/toxics-release-inventory-tri-program/tri-covered-industry-sectors) of the [toxics release inventory program](https://www.epa.gov/toxics-release-inventory-tri-program)
+ &nbsp; | ... | chemical names
 
 <br>
 <br>
