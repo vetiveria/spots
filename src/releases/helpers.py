@@ -17,7 +17,6 @@ class Helpers:
         The constructor
 
         :param counties: The counties of the U.S.A.
-
         :param chemicals: The hazardous chemicals tracked by the United States Environmental Protection Agency
         """
 
@@ -29,7 +28,6 @@ class Helpers:
         """
 
         :param state: The state abbreviation, i.e., STUSPS, of a U.S.A. state or territory
-
         :return: The distinct combinations of counties & chemicals w.r.t. state
         """
 
@@ -44,7 +42,6 @@ class Helpers:
         Acquires the unit of measure of each chemical in data
 
         :param data: A set chemicals data
-
         :return: An expanded data set
         """
         return data.merge(self.chemicals[['TRI_CHEM_ID', 'UNIT_OF_MEASURE']], how='left', on=['TRI_CHEM_ID'])
@@ -54,7 +51,6 @@ class Helpers:
         Weights calculations
 
         :param data: A set chemicals data
-
         :return: A data set wherein the chemical weights have the same unit of measure
         """
 
