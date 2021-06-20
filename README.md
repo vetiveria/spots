@@ -49,6 +49,8 @@ Altogether
   conda install -c anaconda python-graphviz   
   
   conda install -c anaconda xlrd
+  
+  conda install -c anaconda flake8
 ```
 
 And for geopy, quantities, and dotmap
