@@ -1,4 +1,4 @@
-About industries and toxins.  These notes are updated continuously; [more](https://vetiveria.github.io/)
+About industries and toxins.  The ntes herein will be updated continuously; [more](https://vetiveria.github.io/)
 
 
 * [The Data](#the-data)
@@ -43,8 +43,8 @@ Altogether
   conda create --prefix ...environment
   conda activate environment
 
-  conda install -c anaconda python=3.7.7 geopandas nodejs jupyterlab
-                   pywin32 pytest coverage pytest-cov pylint pyyaml
+  conda install -c anaconda python=3.7.7 geopandas nodejs jupyterlab==3.1.7
+                   pytest coverage pytest-cov pylint pyyaml                   
                    
   conda install -c anaconda python-graphviz   
   
@@ -53,7 +53,7 @@ Altogether
   conda install -c anaconda flake8
 ```
 
-And for geopy, quantities, and dotmap
+And for geopy, quantities, pywin32==301, and dotmap
 
 ```bash
   pip install ...    
@@ -148,11 +148,8 @@ Linux:
 
 ### Operating Systems Peculiarities
 
-Beware of bash files created within a Windows environment.  The conversion
+Beware of bash files created within a Windows environment.  Try
 
 ```bash
   dos2unix.exe *.sh
 ```
-
-might be required.
-
